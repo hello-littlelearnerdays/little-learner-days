@@ -1,0 +1,23 @@
+body { overflow-x: clip; }
+.hero-art .bird {
+  animation: fly 2.8s cubic-bezier(.3,.7,.4,1) .3s both;
+}
+.hero-art .bird svg {
+  animation: flutter .15s ease-in-out .3s 14 alternate;
+}
+@keyframes fly {
+  0%   { transform: translate(340px,-150px) rotate(-10deg); opacity: 0; }
+  10%  { opacity: 1; }
+  55%  { transform: translate(110px,-70px) rotate(-5deg); }
+  80%  { transform: translate(15px,-34px) rotate(0deg); }
+  90%  { transform: translate(0,-16px); }
+  96%  { transform: translate(0,3px); }
+  100% { transform: translate(0,0); opacity: 1; }
+}
+@keyframes flutter {
+  from { transform: scaleX(-1) scaleY(1) rotate(0deg); }
+  to   { transform: scaleX(-1) scaleY(.9) rotate(-7deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-art .bird, .hero-art .bird svg { animation: none; }
+}
